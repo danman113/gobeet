@@ -1,0 +1,17 @@
+{
+  "name": "daniel",
+  "sites": [
+    {
+      "url": "www.github.com",
+      "interval": 6000,
+      "pages": [
+        {
+          "status": 404,
+          "url": "http://dberezin.com",
+          "timeout": 200,
+          "method": "GET"
+        }  
+      ]
+    }  
+  ]
+}
