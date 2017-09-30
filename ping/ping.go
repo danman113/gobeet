@@ -35,19 +35,24 @@ func PingStatus(site *site.Page, resChan chan error) {
 		return
 	}
 	fmt.Printf("\t %s = %d\n", site.Url, site.Status)
+	resChan <- nil
 }
 
 func PingWebsite(website *site.Website) {
 	for {
 		fmt.Println(website.Url)
-		for _, page := range website.Pages {
+		for i, _ := range website.Pages {
 			ret := make(chan error)
-			go PingStatus(&page, ret)
+			go PingStatus(&(website.Pages[i]), ret)
 			for e := range ret {
-				handleError(e, &page)
+				if e != nil {
+					handleError(e, &(website.Pages[i]))
+				} else {
+					website.Pages[i].DownSince = nil
+				}
 			}
 		}
-		time.Sleep(time.Duration(website.Interval) * time.Millisecond)
+		time.Sleep(time.Duration(website.Interval) * time.Second)
 	}
 }
 
@@ -55,5 +60,15 @@ func handleError(e error, pg *site.Page) {
 	fmt.Println("Error: ")
 	fmt.Println(e)
 	fmt.Println(*pg)
-	email.SendAlert(e, pg)
+	if pg.DownSince != nil {
+		since := time.Since(*pg.DownSince)
+		if since.Seconds() > float64(pg.Duration) {
+			fmt.Println("Sent Email")
+			pg.DownSince = nil
+			email.SendAlert(e, pg)
+		}
+	} else {
+		now := time.Now()
+		pg.DownSince = &now
+	}
 }

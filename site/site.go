@@ -1,5 +1,9 @@
 package site
 
+import (
+	"time"
+)
+
 type Website struct {
 	Url      string `json: url`
 	Interval int    `json: interval`
@@ -7,9 +11,10 @@ type Website struct {
 }
 
 type Page struct {
-	Url      string `json: url`
-	Status   int    `json: status`
-	Method   string `json: method`
-	Timeout  int    `json: timeout`
-	Duration int    `json: duration`
+	Url       string `json: url`
+	Status    int    `json: status`
+	Method    string `json: method`
+	Timeout   int    `json: timeout`
+	Duration  int    `json: duration`
+	DownSince *time.Time
 }

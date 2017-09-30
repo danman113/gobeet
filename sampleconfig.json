@@ -10,74 +10,74 @@
   "sites": [
     {
       "url": "www.dberezin.com",
-      "interval": 60000,
+      "interval": 60,
       "pages": [
         {
           "status": 200,
           "url": "https://dberezin.com",
-          "timeout": 2000,
+          "timeout": 5000,
           "method": "GET",
-          "duration": 10000
+          "duration": 100
         }, {
           "status": 200,
           "url": "http://dberezin.com",
-          "timeout": 2000,
+          "timeout": 5000,
           "method": "GET",
-          "duration": 10000
+          "duration": 100
         }, {
           "status": 200,
           "url": "https://dberezin.com/portfolio",
-          "timeout": 2000,
+          "timeout": 5000,
           "method": "GET",
-          "duration": 10000
+          "duration": 100
         }, {
           "status": 200,
           "url": "https://dberezin.com/about",
-          "timeout": 2000,
+          "timeout": 5000,
           "method": "GET",
-          "duration": 10000
+          "duration": 100
         }, {
           "status": 200,
           "url": "https://dberezin.com/static/pdf/Resume.pdf",
-          "timeout": 2000,
+          "timeout": 5000,
           "method": "GET",
-          "duration": 10000
+          "duration": 100
         }
       ]
     }, {
       "url": "www.viviannghiem.com",
-      "interval": 60000,
+      "interval": 60,
       "pages": [
         {
           "status": 200,
           "url": "http://viviannghiem.com",
-          "timeout": 2000,
+          "timeout": 5000,
           "method": "GET",
-          "duration": 10000
+          "duration": 100
         }, {
           "status": 200,
           "url": "http://viviannghiem.com/pages/about",
-          "timeout": 2000,
+          "timeout": 5000,
           "method": "GET",
-          "duration": 10000
+          "duration": 100
         }, {
           "status": 200,
           "url": "http://viviannghiem.com/pages/portfolio",
-          "timeout": 2000,
+          "timeout": 5000,
           "method": "GET",
-          "duration": 10000
+          "duration": 100
         }, {
           "status": 200,
           "url": "http://viviannghiem.com/pages/",
-          "timeout": 2000,
+          "timeout": 5000,
           "method": "GET",
-          "duration": 10000
+          "duration": 100
         }, {
           "status": 404,
           "url": "http://viviannghiem.com/pages/adsfasfdgsdf",
-          "timeout": 2000,
+          "timeout": 5000,
           "method": "GET",
-          "duration": 10000
+          "duration": 100
         }
       ]
     }
