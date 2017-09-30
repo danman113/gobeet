@@ -1,17 +1,21 @@
 package config
 
 import (
-	"io/ioutil"
-	// 	. "github.com/danman113/gobeet/re"
 	"encoding/json"
 	"github.com/danman113/gobeet/site"
+	"io/ioutil"
 )
 
-type pingable interface {
+type EmailConfig struct {
+	Address    string   `json: address`
+	Server     string   `json: server`
+	Port       string   `json: port`
+	Template   string   `json: template`
+	Recipients []string `json: recipients`
 }
-
 type Config struct {
 	Sites []site.Website `json: sites`
+	Email EmailConfig    `json: email`
 }
 
 func ParseConfigFile(filename string) (*Config, error) {

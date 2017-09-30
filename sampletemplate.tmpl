@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Gobeet Error</title>
+  <style>
+    body {
+      font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+      font-size: 100%;
+      margin: 0;
+    }
+    .header {
+      background-color: #e9ecef;
+      padding: 15px;
+    }
+    .content {
+      padding: 15px;
+    }
+    .pre {
+      font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      background-color: aliceblue;
+      padding: 15px;
+    }
+    a {
+      color: #3097D1;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Your website, <a href="{{.Site.Url}}">{{.Site.Url}}</a> is down!</h1>
+  </div>
+  <div class="content">
+    <h3>The error is: </h3>
+    <div class="pre">
+      {{.Error}}
+    </div>
+  </div>
+</body>
+</html>

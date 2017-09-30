@@ -1,17 +1,85 @@
 {
   "name": "daniel",
+  "email": {
+    "address": "dberezin@ucsc.edu",
+    "recipients": ["danman113@msn.com"],
+    "server": "smtp.gmail.com",
+    "port": "587",
+    "template": "sampletemplate.tmpl"
+  },
   "sites": [
     {
-      "url": "www.github.com",
-      "interval": 6000,
+      "url": "www.dberezin.com",
+      "interval": 60000,
       "pages": [
         {
-          "status": 404,
+          "status": 200,
+          "url": "https://dberezin.com",
+          "timeout": 2000,
+          "method": "GET",
+          "duration": 10000
+        }, {
+          "status": 200,
           "url": "http://dberezin.com",
-          "timeout": 200,
-          "method": "GET"
-        }  
+          "timeout": 2000,
+          "method": "GET",
+          "duration": 10000
+        }, {
+          "status": 200,
+          "url": "https://dberezin.com/portfolio",
+          "timeout": 2000,
+          "method": "GET",
+          "duration": 10000
+        }, {
+          "status": 200,
+          "url": "https://dberezin.com/about",
+          "timeout": 2000,
+          "method": "GET",
+          "duration": 10000
+        }, {
+          "status": 200,
+          "url": "https://dberezin.com/static/pdf/Resume.pdf",
+          "timeout": 2000,
+          "method": "GET",
+          "duration": 10000
+        }
       ]
-    }  
+    }, {
+      "url": "www.viviannghiem.com",
+      "interval": 60000,
+      "pages": [
+        {
+          "status": 200,
+          "url": "http://viviannghiem.com",
+          "timeout": 2000,
+          "method": "GET",
+          "duration": 10000
+        }, {
+          "status": 200,
+          "url": "http://viviannghiem.com/pages/about",
+          "timeout": 2000,
+          "method": "GET",
+          "duration": 10000
+        }, {
+          "status": 200,
+          "url": "http://viviannghiem.com/pages/portfolio",
+          "timeout": 2000,
+          "method": "GET",
+          "duration": 10000
+        }, {
+          "status": 200,
+          "url": "http://viviannghiem.com/pages/",
+          "timeout": 2000,
+          "method": "GET",
+          "duration": 10000
+        }, {
+          "status": 404,
+          "url": "http://viviannghiem.com/pages/adsfasfdgsdf",
+          "timeout": 2000,
+          "method": "GET",
+          "duration": 10000
+        }
+      ]
+    }
   ]
 }
